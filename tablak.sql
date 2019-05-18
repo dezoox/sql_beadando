@@ -1,0 +1,92 @@
+CREATE TABLE Users(
+	id INT NOT NULL IDENTITY(1,1),
+	username VARCHAR(250) NOT NULL,
+	password VARCHAR(250) NOT NULL,
+
+	CONSTRAINT PK_Users PRIMARY KEY(id)
+);
+
+CREATE TABLE Users_details(
+	user_id INT NOT NULL,
+	address VARCHAR(250) NOT NULL,
+	firstName VARCHAR(250) NOT NULL,
+	lastname VARCHAR(250) NOT NULL,
+	email VARCHAR(250) NOT NULL,
+
+	CONSTRAINT PK_Users_details PRIMARY KEY(user_id),
+	CONSTRAINT FK_Users_details FOREIGN KEY(user_id) REFERENCES Users(id)
+);
+DROP TABLE Users_details;
+CREATE TABLE Cars(
+	id INT NOT NULL IDENTITY(1,1),
+	userId INT NOT NULL,
+
+
+	CONSTRAINT PK_Cars PRIMARY KEY(id),
+	CONSTRAINT FK_Cars_Users FOREIGN KEY(userId) REFERENCES Users(id)
+);
+DELETE FROM Users WHERE 1=1;
+DELETE FROM Users_details WHERE 1=1;
+
+CREATE TABLE Car_Details(
+	id INT NOT NULL,
+	name VARCHAR(250) NOT NULL,
+	body_type VARCHAR(250) NOT NULL,
+	fuel_type VARCHAR(250) NOT NULL,
+	motor_power VARCHAR(250) NOT NULL,
+	manufacture_year INT NOT NULL
+	
+	CONSTRAINT PK_Car_Details PRIMARY KEY(id),
+	CONSTRAINT FK_Car_Details_Cars FOREIGN KEY (id) REFERENCES Cars(id)
+);
+DROP TABLE Car_Details;
+
+CREATE TABLE Parts(
+	id INT NOT NULL IDENTITY(1,1),
+
+
+	CONSTRAINT PK_Parts PRIMARY KEY (id),
+);
+
+CREATE TABLE Parts_Details(
+	id INT NOT NULL IDENTITY(1,1),
+	name VARCHAR(250) NOT NULL,
+	price INT NOT NULL,
+
+	CONSTRAINT PK_Parts_Details PRIMARY KEY(id),
+);
+
+CREATE TABLE Orders(
+	id INT NOT NULL IDENTITY(1,1),
+	userId INT NOT NULL,
+	partsId INT NOT NULL,
+
+
+	CONSTRAINT PK_Orders PRIMARY KEY(id),
+	CONSTRAINT FK_Orders_Users FOREIGN KEY (userId) REFERENCES Users(id),
+	CONSTRAINT FK_Orders_Parts FOREIGN KEY (partsId) REFERENCES Parts(id),
+);
+
+CREATE TABLE Orders_to_Parts(
+	orderId INT NOT NULL,
+	partsId INT NOT NULL,
+
+	CONSTRAINT FK_Order_to_Parts_parts FOREIGN KEY(partsId) REFERENCES Parts(id),
+	CONSTRAINT FK_Order_to_Parts_orders FOREIGN KEY(orderId) REFERENCES Orders(id),
+);
+CREATE TABLE Cars_to_Parts(
+	carId INT NOT NULL,
+	partsId INT NOT NULL,
+
+	CONSTRAINT FK_Cars_to_parts_cars FOREIGN KEY(carId) REFERENCES Cars(id),
+	CONSTRAINT FK_Cars_to_parts_parts FOREIGN KEY(partsId) REFERENCES Parts(id),
+
+);
+
+CREATE TABLE Storage(
+	id INT NOT NULL IDENTITY(1,1),
+	partsId INT NOT NULL,
+
+	CONSTRAINT PK_Storage PRIMARY KEY(id),
+	CONSTRAINT FK_Storage_Parts FOREIGN KEY(partsId) REFERENCES Parts(id)
+);

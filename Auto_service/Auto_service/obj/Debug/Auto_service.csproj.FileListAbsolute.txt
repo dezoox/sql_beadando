@@ -1,0 +1,12 @@
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\bin\Debug\Auto_service.exe.config
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\bin\Debug\Auto_service.exe
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\bin\Debug\Auto_service.pdb
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\obj\Debug\Auto_service.csprojAssemblyReference.cache
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\obj\Debug\Auto_service.LoginForm.resources
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\obj\Debug\Auto_service.Properties.Resources.resources
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\obj\Debug\Auto_service.csproj.GenerateResource.cache
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\obj\Debug\Auto_service.csproj.CoreCompileInputs.cache
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\obj\Debug\Auto_service.exe
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\obj\Debug\Auto_service.pdb
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\obj\Debug\Auto_service.Forms.RegistrationForm.resources
+C:\Users\levi1\Desktop\sql szerverprog beadando\Auto_service\Auto_service\obj\Debug\Auto_service.Forms.CarForm.resources
